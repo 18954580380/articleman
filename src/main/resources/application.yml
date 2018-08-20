@@ -1,0 +1,34 @@
+server:
+  port: 8086
+  servlet.context-path: /articleman
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://11.11.152.84:3306/koboro_zhongshiyou
+    username: root
+    password: zekangyun456
+  jmx:
+    default-domain: articleman
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    suffix: .ftl
+    templateLoaderPath: classpath:/templates/
+
+mybatis:
+  mapper-locations: classpath:sqlmapper/*/*-sqlmapper.xml
+  type-aliases-package: cn.koboro.articleman.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  offset-as-page-num: "true"
+  row-bounds-with-count: "true"
+  reasonable: "true"
